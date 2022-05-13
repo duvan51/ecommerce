@@ -12,9 +12,10 @@ function App() {
         {/* routes publics */}
         <Route path='/login' element={<Login />} />
         <Route path='/signup'/>  
-        <Route>
-          {/* routes private */}
-          <Route path='/' element={<Protectedpages />} />
+       
+       {/* routes private */}
+        <Route element={<Protectedpages />}>
+          <Route path='/' />
           <Route path='/shop' element={<Shop />} />
           <Route path='/shop/:id' element={<Product />} />
           <Route path='/cart' />

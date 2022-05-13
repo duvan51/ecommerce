@@ -20,10 +20,14 @@ const ProductItem = ({probObject}) => {
     <div className="row row-cols-1 row-cols-md-2 g-4">
       <div className="col">
         <div className="card">
-          <img src={oneImge} className="card-img-top" alt="..." />
-          <div className="info">
-            <i class="bi bi-search"></i>
-          </div>
+          <Link to ={`/shop/${probObject.id}/`} >
+            <img src={oneImge} className="card-img-top" alt="..." />
+          </Link>
+          <Link to ={`/shop/${probObject.id}/`}>
+            <div className="info">
+              <i className="bi bi-search"></i>
+            </div>
+          </Link>
           <div className="card-body">
             <h5 className="card-title">{probObject.name}</h5>
             <p className="card-text">{probObject.description}</p>

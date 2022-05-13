@@ -3,20 +3,26 @@ import {actions} from '../actions'
 
 const INITIAL_STATE ={
     products : [ ],
-    productInfo : { }
+    productInfo : { },
+    categories: []
 }
 export const rootReducer = (state = INITIAL_STATE, action)=> {
 
     switch (action.type){
         case actions.productSetAll:
             return{
-                ...INITIAL_STATE,
+                ...state,
                 products: action.payload
             }
-        case action.productSetById:
+        case actions.productSetInfoById:
             return {
                 ...state,
                 productInfo: action.payload
+            }
+        case actions.categoriesSetValues:
+            return {
+                ...state,
+                categories: action.payload
             }
 
     default:

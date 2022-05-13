@@ -26,13 +26,33 @@ export const createUser = async (data)=> {
 }
 
 
-export const getProduct = async ()=>{
+export const getProducts = async ()=>{
     const req = await axios.get(`${URL}/products/`, getConfig())
     return req.data
 }
 
 
 export const getProductById = async (id)=>{
-    const req = await axios.get(`${URL}/products/${id}`)
+    const req = await axios.get(`${URL}/products/${id}/`, getConfig())
     return req.data
+}
+
+export const getFilterCategories = async ()=>{
+    const req = await axios.get(`${URL}/categories/`, getConfig())
+    return req.data
+}
+export const getFilterProducts = async (id)=>{
+   
+    const req = await axios.get(`${URL}/products/?category=${id}`, getConfig())
+    return req.data
+}
+
+
+
+
+export const addProductTocart = async (data)=>{
+
+    const req = await axios.post(`${URL}/products/add_to_cart/`,data, getConfig())
+    return req.data
+
 }

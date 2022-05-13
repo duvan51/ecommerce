@@ -1,0 +1,21 @@
+.navbarLinks{
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    background: rgb(0,29,255);
+    background: linear-gradient(187deg, rgba(0,29,255,1) 17%, rgba(238,1,247,1) 96%); 
+    height:40px;
+    color:white;
+    gap:20px;
+    align-items:center;
+    padding-left: 30px;
+
+}
+.navbarLinks > a{
+    font-weight:bold;
+    color:white !important;
+    text-decoration: none !important;
+}
+.navbarLinks > a > div:hover {
+    color: rgba(255, 255, 255, 0.406);
+}
