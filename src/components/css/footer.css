@@ -1,0 +1,12 @@
+footer{
+    background: rgb(0,29,255);
+    background: linear-gradient(187deg, rgba(0,29,255,1) 17%, rgba(238,1,247,1) 96%); 
+    margin-top: 100px;
+}
+footer > button  {
+    background-color: white!important; ;
+}
+
+.copy{
+    background-color: rgba(0, 0, 0, 0.2);
+}

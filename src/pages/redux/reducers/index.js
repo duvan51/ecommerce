@@ -4,7 +4,9 @@ import {actions} from '../actions'
 const INITIAL_STATE ={
     products : [ ],
     productInfo : { },
-    categories: []
+    categories: [],
+    car: []
+
 }
 export const rootReducer = (state = INITIAL_STATE, action)=> {
 
@@ -23,6 +25,11 @@ export const rootReducer = (state = INITIAL_STATE, action)=> {
             return {
                 ...state,
                 categories: action.payload
+            }
+        case actions.carSetProducts:
+            return{
+                ...state,
+                car: action.payload
             }
 
     default:

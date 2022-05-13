@@ -15,6 +15,12 @@ const Navbar = () => {
         <div>
             product
         </div>
+        <i className="bi bi-chevron-right"></i>
+        <Link to="/cart/">
+          <div>
+              Cart
+          </div>
+        </Link>
     </div>
   )
 }

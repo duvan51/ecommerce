@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link} from 'react-router-dom'
+import { useParams} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {setInfoProductThunk} from './redux/actions'
 import {useSelector} from 'react-redux'
 import Navbar from '../components/Navbar.js'
+import {addProductTocart} from '../services/index'
 
 
 import './css/product.css'
@@ -15,8 +16,8 @@ const Product = () => {
   const {id} = useParams()
   const dispatch = useDispatch()
   const product = useSelector(state => state.productInfo)
-
-  const [image, setImage]=useState({ })
+  const [quantity, setQuantity]=useState(0)// carrito
+  const [confirm, setConfirm] = useState(false)
 
   
   useEffect(()=>{
@@ -37,10 +38,26 @@ const Product = () => {
     backdrop:" linear-gradient(187deg, rgba(0,29,255,1) 17%, rgba(238,1,247,1) 96% , 0.9",
   }))}
   
-  
+
+/*start car */
+ useEffect(()=>{
+    if(quantity  && confirm){
+      addProductTocart({
+        product : id,
+        quantity : quantity
+      })
+      .then((x)=> 
+      
+      console.log(x),
+       setConfirm(false)
+      )
+    }
+
+ }, [quantity, confirm, id])
 
 
-  
+/*end car */
+
   
   return (
     <div className="product">
@@ -84,8 +101,9 @@ const Product = () => {
                 </select>
              </div>
             <div className="carCount">
-                <input type="number" className="form-control" id="quantity" name="quantity" min="1" max="5" />
-                <button className="btn btn-success" >
+                <input type="number" className="form-control" id="quantity" name="quantity" min="1" max="10" onChange={event => setQuantity(event.target.value)} />
+                
+                <button className="btn btn-success"  onClick={()=> setConfirm(true)}>
                    <i className="bi bi-pci-card"></i>
                 </button>
             </div>

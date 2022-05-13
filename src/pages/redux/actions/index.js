@@ -1,9 +1,10 @@
-import { getFilterCategories, getProducts, getProductById, getFilterProducts} from "../../../services"
+import { getFilterCategories, getProducts, getProductById, getFilterProducts, getProductsFromCart} from "../../../services"
 
 export const actions = {
     productSetAll : "@product/setAll",
     productSetInfoById : "@product/setById",
-    categoriesSetValues: "@categories/setValue"
+    categoriesSetValues: "@categories/setValue",
+    carSetProducts: "@car/setProducts",
 }
 
 export const productSetAll = (data)=>({
@@ -23,6 +24,11 @@ export const setCategories = (data)=>({
     payload:data
 })
 
+export const setProductsToCart = (data)=>({
+
+    type: actions.carSetProducts,
+    payload:data
+})
 
 
 
@@ -72,3 +78,14 @@ export const setCategoriesThunk = ()=>{
     }
 }
 
+
+
+
+export const setCarProductsThunk = ()=>{
+    return (dispatch)=>{
+        getProductsFromCart()
+            .then((res)=>{
+                dispatch(setProductsToCart(res))
+            })
+    }
+}
