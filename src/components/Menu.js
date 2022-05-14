@@ -1,5 +1,6 @@
 import React from 'react'
 import './css/menu.css'
+import {Link} from 'react-router-dom'
 
 const Menu = ({menu, handlerid}) => {
 
@@ -14,7 +15,9 @@ const Menu = ({menu, handlerid}) => {
     <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light menuNavbar">
             <div className="container-fluid">
-                <a href="#" className="navbar-brand"> Nabvar </a>
+                <Link > 
+                 <div className="navbar-brand" >@logo</div>
+                </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
