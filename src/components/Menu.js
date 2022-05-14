@@ -14,7 +14,7 @@ const Menu = ({menu, handlerid}) => {
     <>
         <nav className="navbar navbar-expand-lg navbar-light bg-light menuNavbar">
             <div className="container-fluid">
-                <a className="navbar-brand" >Navbar</a>
+                <a href="#" className="navbar-brand"> Nabvar </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
