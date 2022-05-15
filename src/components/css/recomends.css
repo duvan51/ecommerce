@@ -1,0 +1,36 @@
+.recomends{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+.recomendsT{
+    display:flex;
+    flex-direction: row;
+    height:175px;
+    gap:5px;
+    width:450px;
+    overflow-x:scroll;
+    overflow-y:none;
+}
+
+.recomendsT>div{
+    height:100%;
+    width:80px;
+    border:1px solid rgba(0, 0, 0, 0.531);
+}
+/*letter*/
+.recomendsT>div>div:nth-child(2){
+    height:50%;
+}
+
+.recomendsT>div>div:nth-child(2){
+    font-size: 13px;
+}
+/*img*/
+.recomendsT>div>div:nth-child(1){
+    height:50%;
+}
+.recomendsT>div>div> img{
+    height:100%;
+}

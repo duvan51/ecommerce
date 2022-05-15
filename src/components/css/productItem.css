@@ -12,11 +12,11 @@
     overflow: hidden;
 }
 .info{
-    
     width:100%;
     height: 40px;
     transform: translateY(-30px);
-    background-color: rgb(17, 240, 17, .3);
+    background: rgb(0,29,255, 0.8);
+    background: linear-gradient(187deg, rgba(0, 30, 255, 0.348) 17%, rgba(239, 1, 247, 0.4) 96%); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +26,7 @@
 }
 .info>i{
     text-decoration: none !important;
-    color:rgb(92, 92, 92);
+    color:white;
 }
 .info:hover{
     font-size: 30px;

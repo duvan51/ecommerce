@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar.js'
 
 
 import './css/shop.css'
+import Footer from '../components/Footer'
 
 const Shop = () => {
 
@@ -20,9 +21,6 @@ const Shop = () => {
   useEffect(()=>{
     dispatch(setProductThunk(currentCategory))
     dispatch(setCategoriesThunk())
-  
-
-    
   }, [dispatch, currentCategory])
 
 
@@ -31,6 +29,7 @@ const Shop = () => {
  
 
   const List = productArr.map((item) => <ProductItem key={item.id} probObject={item}  />)
+ 
 
 
   return (
@@ -40,6 +39,7 @@ const Shop = () => {
       <div className= "Listproducts ">
         {List}
       </div>
+      <Footer />
     </>
   )
 }

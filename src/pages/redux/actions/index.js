@@ -1,10 +1,10 @@
-import { getFilterCategories, getProducts, getProductById, getFilterProducts, getProductsFromCart} from "../../../services"
+import { getFilterCategories, getProducts, getProductById, getFilterProducts, getProductsFromCart, deleteProductFromCart} from "../../../services"
 
 export const actions = {
     productSetAll : "@product/setAll",
     productSetInfoById : "@product/setById",
     categoriesSetValues: "@categories/setValue",
-    carSetProducts: "@car/setProducts",
+    carSetProducts: "@car/setProducts"
 }
 
 export const productSetAll = (data)=>({
@@ -33,21 +33,18 @@ export const setProductsToCart = (data)=>({
 
 
 
-
-
 export const setProductThunk =(category)=>{
     return (dispatch) =>{
-        if(!category ){
+        if(category){
+            getFilterProducts(category)
+            .then((rest)=>{
+                 dispatch(productSetAll(rest))
+            })
+        }else{
             getProducts()
             .then((res)=>{
-                 dispatch(productSetAll(res))
-                
+                 dispatch(productSetAll(res))       
             })
-        }else if(category){
-            getFilterProducts(category)
-                .then((rest)=>{
-                     dispatch(productSetAll(rest))
-                })
         }   
     }
 }
@@ -79,13 +76,23 @@ export const setCategoriesThunk = ()=>{
 }
 
 
-
-
 export const setCarProductsThunk = ()=>{
     return (dispatch)=>{
         getProductsFromCart()
             .then((res)=>{
                 dispatch(setProductsToCart(res))
             })
+    }
+}
+
+
+
+export const deleteProductsCartThunk = (id)=>{
+    return (dispatch)=>{
+        deleteProductFromCart(id)
+            .then(()=>{
+                dispatch(setCarProductsThunk())
+            })
+
     }
 }

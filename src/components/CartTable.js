@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import {useDispatch} from 'react-redux'
+import {deleteProductsCartThunk} from '../pages/redux/actions'
 
 
-const CartTable = ({info}) => {
-  
+
+
+const CartTable = ({info, total}) => {
+
+    const dispatch = useDispatch()
+    const [deletId, setDeletId] = useState(null)
+
+
+    useEffect(() => {
+        if(deletId){
+            dispatch(deleteProductsCartThunk(deletId))
+        }  
+    },[deletId, dispatch])
 
 
    // const coustTotalForUnd = ((info.quantity)*(info.product.price));
@@ -18,7 +31,7 @@ const CartTable = ({info}) => {
              <td>{info.quantity}</td>
              <td>{"$"+ ((info.product.price)*(info.quantity)).toFixed(2)}</td>
              <td>
-              <button type="button" className="btn btn-danger">Deleted</button>
+              <button type="button" className="btn btn-danger" onClick={()=> setDeletId(info.id)}>Deleted</button>
              </td>
         </tr>
 
@@ -45,7 +58,7 @@ const CartTable = ({info}) => {
                 </tr>
                 <tr>
                     <td colSpan="4">ALL PURCHASE</td>
-                    <td colSpan="2">$2584100</td>
+                    <td colSpan="2"> $ {total} </td>
                 </tr>
             </tbody>
         </table>

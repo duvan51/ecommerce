@@ -1,5 +1,6 @@
 .product{
     width: 100%;
+    height:auto;
     margin-bottom:40px;
 }
 .InfoProduct{
@@ -96,4 +97,15 @@
     width:90px;
     font-size:15px;
     background-color: rgb(17, 240, 17);
+}
+
+
+
+
+
+.btnFilter{
+    margin-top:10px;
+    background-color:rgba(255, 255, 255, 0);
+    border: none;
+    font-size: 30px;
 }

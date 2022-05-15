@@ -5,19 +5,19 @@ import './css/footer.css'
 
 const Footer = () => {
   return (
-  <footer className="text-center text-lg-start" >
-    <div className="container d-flex justify-content-center py-5">
-      <button type="button" className="btn btn-primary btn-lg btn-floating mx-2"  >
-        <i className="fab fa-facebook-f"></i>
+  <footer className="text-center text-lg-start footer" >
+    <div className="container d-flex justify-content-center py-3">
+      <button type="button" className="btn btn-primary btn-lg btn-floating mx-2 btns"  >
+          <i class="bi bi-facebook"></i>
       </button>
       <button type="button" className="btn btn-primary btn-lg btn-floating mx-2" >
-        <i className="fab fa-youtube"></i>
+           <i class="bi bi-instagram"></i>
       </button>
       <button type="button" className="btn btn-primary btn-lg btn-floating mx-2" >
-        <i className="fab fa-instagram"></i>
+            <i class="bi bi-telegram"></i>
       </button>
       <button type="button" className="btn btn-primary btn-lg btn-floating mx-2" >
-        <i className="fab fa-twitter"></i>
+            <i class="bi bi-messenger"></i>
       </button>
     </div>
     <div className="text-center text-white p-3 copy">

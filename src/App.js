@@ -9,6 +9,7 @@ import Shop from './pages/Shop';
 function App() {
   return (
     <div className="App">
+      
       <Routes>
         {/* routes publics */}
         <Route path='/login' element={<Login />} />
@@ -22,6 +23,7 @@ function App() {
           <Route path='/cart' element = {<Car />} />
         </Route>
       </Routes>
+
     </div>
   );
 }
