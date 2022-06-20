@@ -43,3 +43,16 @@
     background-color: rgba(137, 43, 226, 0.103);
     color:white;
 }
+
+
+.default{
+    background: red;
+    padding:10px;
+    color:white;
+    font-size: 20px;
+    
+}
+.default>div{
+    display:flex;
+    width:100%;
+}

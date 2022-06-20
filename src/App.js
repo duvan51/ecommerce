@@ -9,15 +9,13 @@ import Shop from './pages/Shop';
 function App() {
   return (
     <div className="App">
-      
       <Routes>
         {/* routes publics */}
-        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
         <Route path='/signup'/>  
        
        {/* routes private */}
         <Route element={<Protectedpages />}>
-          <Route path='/' />
           <Route path='/shop' element={<Shop />} />
           <Route path='/shop/:id' element={<Product />} />
           <Route path='/cart' element = {<Car />} />

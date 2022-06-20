@@ -74,6 +74,10 @@ const Login = () => {
         
       </form>
       <input type="submit" value="createUser" className='createUser' />
+      <div className="default">
+        <div>email: admin@admin.com</div>
+        <div>password: root </div>
+      </div>
       
   </div>
   )
